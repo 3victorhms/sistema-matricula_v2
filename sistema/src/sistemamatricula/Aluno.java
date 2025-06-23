@@ -14,7 +14,7 @@ public class Aluno {
         this.nome = nome;
         this.nomeDaMae = nomeDaMae;
         this.endereco = endereco;
-        this.discMatriculadas = new NotaDisciplina[10];
+        this.discMatriculadas = new NotaDisciplina[30];
         this.numDiscMatriculadas = 0;
     }
 

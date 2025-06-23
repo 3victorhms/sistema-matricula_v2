@@ -7,11 +7,13 @@ public class Sistema {
     private Aluno[] alunos;
     private int proxMatricula = 1;
 
+    public Sistema(int qntdDisciplinas, int qntdAlunos) {
+        disciplinas = new Disciplina[qntdDisciplinas];
+        alunos = new Aluno[qntdAlunos];
+    }
+
     void init() {
         // Inicializar
-        this.disciplinas = new Disciplina[30];
-        this.alunos = new Aluno[10];
-
         // Inserir 5 disciplinas
         Disciplina d = new Disciplina(gerarProxCodigo(), "Matematica", 2025, 10, "João Batista");
         this.inserir(d);
@@ -37,6 +39,21 @@ public class Sistema {
 
         a = new Aluno(gerarProxMatricula(), "Carlos Eduardo", "Maria Isabel", "Rua 3, 23456-789");
         this.inserir(a);
+
+        // matricular os alunos
+        // aluno 1
+        matricularAluno(1, 1);
+        matricularAluno(1, 3);
+        matricularAluno(1, 4);
+
+        // aluno 2
+        matricularAluno(2, 3);
+        matricularAluno(2, 2);
+        matricularAluno(2, 5);
+
+        matricularAluno(3, 4);
+        matricularAluno(3, 2);
+        matricularAluno(3, 5);
 
     }
 
@@ -73,7 +90,9 @@ public class Sistema {
                 if (aluno != null) {
                     NotaDisciplina[] nd = aluno.getDiscMatriculadas();
                     for (int j = 0; j < nd.length; j++) {
-                        if (nd[j] != null && nd[j].getDisciplina() != null && nd[j].getDisciplina().getCodigo() == codDisciplina) {
+                        if (nd[j] != null && nd[j].getDisciplina() != null
+
+                                && nd[j].getDisciplina().getCodigo() == codDisciplina) {
                             nd[j] = null;
                             aluno.setNumDiscMatriculadas(aluno.getNumDiscMatriculadas() - 1);
                         }
@@ -158,8 +177,11 @@ public class Sistema {
                 soma += nota.getNota();
                 contador++;
             }
+
         }
-        if (contador == 0) return 0;
+
+        if (contador == 0)
+            return 0;
         return soma / contador;
     }
 
