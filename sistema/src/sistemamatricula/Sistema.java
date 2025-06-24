@@ -146,11 +146,27 @@ public class Sistema {
     }
 
     public Disciplina[] getDisciplinas() {
-        return disciplinas;
+        Disciplina[] d = new Disciplina[this.disciplinas.length];
+        for (int i = 0; i < this.disciplinas.length; i++) {
+            if (this.disciplinas[i] != null) {
+                d[i] = new Disciplina(this.disciplinas[i]);
+            } else {
+                d[i] = null;
+            }
+        }
+        return d;
     }
 
     public Aluno[] getAlunos() {
-        return alunos;
+        Aluno[] a = new Aluno[this.alunos.length];
+        for (int i = 0; i < this.alunos.length; i++) {
+            if (this.alunos[i] != null) {
+                a[i] = new Aluno(this.alunos[i]);
+            } else {
+                a[i] = null;
+            }
+        }
+        return a;
     }
 
     public int getProxCodigo() {

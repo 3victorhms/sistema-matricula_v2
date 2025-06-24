@@ -7,6 +7,14 @@ public class Disciplina {
     private int numVagas;
     private String nomeDoProfessor;
 
+    public Disciplina(Disciplina outraDisciplina) {
+        this.codigo = outraDisciplina.codigo;
+        this.nome = outraDisciplina.nome;
+        this.ano = outraDisciplina.ano;
+        this.numVagas = outraDisciplina.numVagas;
+        this.nomeDoProfessor = outraDisciplina.nomeDoProfessor;
+    }
+
     public Disciplina(long codigo, String nome, int ano, int numVagas, String nomeDoProfessor) {
         this.codigo = codigo;
         this.nome = nome;

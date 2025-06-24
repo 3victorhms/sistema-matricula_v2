@@ -4,7 +4,12 @@ public class NotaDisciplina {
     private double nota;
     private Disciplina disciplina;
 
-    NotaDisciplina(Disciplina disciplina, double nota) {
+    public NotaDisciplina(NotaDisciplina outraNota) {
+        this.nota = outraNota.nota;
+        this.disciplina = new Disciplina(outraNota.disciplina);
+    }
+
+    public NotaDisciplina(Disciplina disciplina, double nota) {
         if (nota >= 0 && nota <= 10)
             this.nota = nota;
         if (disciplina != null)

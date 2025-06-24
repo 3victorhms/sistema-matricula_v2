@@ -9,6 +9,22 @@ public class Aluno {
     private int numDiscMatriculadas;
     private double media;
 
+    public Aluno(Aluno outroAluno) {
+        if (outroAluno == null) {
+
+        }
+        this.numMatricula = outroAluno.numMatricula;
+        this.nome = outroAluno.nome;
+        this.nomeDaMae = outroAluno.nomeDaMae;
+        this.endereco = outroAluno.endereco;
+        this.discMatriculadas = new NotaDisciplina[outroAluno.discMatriculadas.length];
+        for (int i = 0; i < outroAluno.numDiscMatriculadas; i++) {
+            this.discMatriculadas[i] = new NotaDisciplina(outroAluno.discMatriculadas[i]);
+        }
+        this.numDiscMatriculadas = outroAluno.numDiscMatriculadas;
+        this.media = outroAluno.media;
+    }
+
     public Aluno(long numMatricula, String nome, String nomeDaMae, String endereco) {
         this.numMatricula = numMatricula;
         this.nome = nome;
