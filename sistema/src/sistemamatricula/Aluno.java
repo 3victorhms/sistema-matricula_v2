@@ -10,9 +10,6 @@ public class Aluno {
     private double media;
 
     public Aluno(Aluno outroAluno) {
-        if (outroAluno == null) {
-
-        }
         this.numMatricula = outroAluno.numMatricula;
         this.nome = outroAluno.nome;
         this.nomeDaMae = outroAluno.nomeDaMae;

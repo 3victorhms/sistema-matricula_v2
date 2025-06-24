@@ -210,7 +210,7 @@ public class Sistema {
         for (int i = 0; i < copia.length; i++) {
             for (int j = i + 1; j < copia.length; j++) {
                 if (copia[i] != null && copia[j] != null) {
-                    if (copia[i].getMedia() < copia[j].getMedia()) {
+                    if (copia[i].getMedia() > copia[j].getMedia()) {
                         Aluno aux = copia[i];
                         copia[i] = copia[j];
                         copia[j] = aux;
